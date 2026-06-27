@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111318" />
+    <title>find the katseye!</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section id="profileScreen" class="profile-screen" aria-label="Valj profilbild">
+      <div class="profile-panel">
+        <p class="eyebrow">find the katseye!</p>
+        <h2>Valj din profilbild</h2>
+        <label class="name-field">
+          <span>Ditt namn</span>
+          <input id="playerNameInput" type="text" maxlength="16" placeholder="Skriv namn" />
+        </label>
+        <div class="profile-grid">
+          <button class="profile-choice" type="button" data-profile="sophia.jpg">
+            <img src="assets/sophia.jpg" alt="Sophia" />
+            <span>Sophia</span>
+          </button>
+          <button class="profile-choice" type="button" data-profile="megan.jpg">
+            <img src="assets/megan.jpg" alt="Megan" />
+            <span>Megan</span>
+          </button>
+          <button class="profile-choice" type="button" data-profile="manon.jpg">
+            <img src="assets/manon.jpg" alt="Manon" />
+            <span>Manon</span>
+          </button>
+          <button class="profile-choice" type="button" data-profile="daniela.jpg">
+            <img src="assets/daniela.jpg" alt="Daniela" />
+            <span>Daniela</span>
+          </button>
+          <button class="profile-choice" type="button" data-profile="lara.jpg">
+            <img src="assets/lara.jpg" alt="Lara" />
+            <span>Lara</span>
+          </button>
+          <button class="profile-choice" type="button" data-profile="yoonchae.jpg">
+            <img src="assets/yoonchae.jpg" alt="Yoonchae" />
+            <span>Yoonchae</span>
+          </button>
+        </div>
+        <button id="startGame" class="start-btn" type="button">Starta spelet</button>
+      </div>
+    </section>
+
+    <main class="game-shell">
+      <section class="hud" aria-label="Spelstatus">
+        <div>
+          <p class="eyebrow">find the katseye!</p>
+          <h1><span data-i18n="level">Level</span> <span id="levelText">1</span></h1>
+        </div>
+        <div class="language-picker">
+          <button id="cycleLanguage" class="language-label" type="button" data-i18n="language">Sprak</button>
+          <select id="languageSelect" aria-label="Valj sprak" onchange="changeLanguage(this.value)">
+            <option value="sv">Svenska</option>
+            <option value="en">English</option>
+            <option value="es">Espanol</option>
+            <option value="ko">Korean</option>
+          </select>
+        </div>
+        <div class="hud-stats">
+          <div>
+            <span data-i18n="coins">Mynt</span>
+            <strong id="coinText">0</strong>
+          </div>
+          <div>
+            <span>Rank</span>
+            <strong id="rankText">Noob</strong>
+          </div>
+          <div>
+            <span data-i18n="found">Samlade</span>
+            <strong><span id="foundText">0</span>/6</strong>
+          </div>
+          <div>
+            <span>Online</span>
+            <strong id="onlineText">Bara du</strong>
+          </div>
+        </div>
+        <div class="shop-actions" aria-label="Shop">
+          <button id="buyHint" class="shop-btn" type="button" aria-label="Kop forstoringsglas">
+            <span data-i18n="hint">Hint</span> 50
+          </button>
+          <button id="buyInvisible" class="shop-btn" type="button" aria-label="Kop osynlighetsmedel">
+            <span data-i18n="invisible">Osynlig</span> 30
+          </button>
+        </div>
+      </section>
+
+      <section class="stage-wrap" aria-label="Spelyta">
+        <div id="stage" class="stage">
+          <div id="world" class="world"></div>
+          <div class="vignette"></div>
+        </div>
+        <div id="message" class="message is-hidden"></div>
+      </section>
+
+      <section class="controls" aria-label="Kontroller">
+        <button type="button" class="control-btn" data-dir="up" aria-label="Upp" data-i18n="up">Upp</button>
+        <div>
+          <button type="button" class="control-btn" data-dir="left" aria-label="Vanster" data-i18n="left">Vanster</button>
+          <button type="button" class="control-btn" data-dir="down" aria-label="Ner" data-i18n="down">Ner</button>
+          <button type="button" class="control-btn" data-dir="right" aria-label="Hoger" data-i18n="right">Hoger</button>
+        </div>
+      </section>
+
+      <p class="credit">
+        <span data-i18n="photo">Foto</span>:
+        <a href="https://commons.wikimedia.org/wiki/File:Katseye_at_Wango_Tango_2025_(cropped).jpg">Wikimedia Commons</a>,
+        CC BY 4.0
+      </p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

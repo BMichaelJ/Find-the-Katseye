@@ -1,0 +1,19 @@
+{
+  "name": "find the katseye!",
+  "short_name": "katseye",
+  "description": "A free game where you find KATSEYE members, collect coins, and level up.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#111318",
+  "theme_color": "#111318",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
